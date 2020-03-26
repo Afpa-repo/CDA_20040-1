@@ -12,7 +12,7 @@ USE `e-gole`;
 CREATE TABLE Suppliers(
         IDSuppliers Int  Auto_increment  NOT NULL ,
         Company_Name Varchar (500) NOT NULL ,
-        Headquarters Varchar (200) NOT NULL ,
+        Headoffice Varchar (200) NOT NULL ,
         Tel          Varchar (15) NOT NULL ,
         City         Varchar (150) ,
         Mail         Varchar (150)
