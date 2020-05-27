@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!{% endblock %}
+
+{% block body %}
+    <div class="container-fluid ">
+        <div class="mt-5">
+            <h1>Votre Panier </h1>
+        </div>
+        {% if items | length > 0 %}
+
+            <table class="table text-center">
+                <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in items %}
+
+                    <tr>
+                        <td>{{ item.product.wording }}</td>
+                        <td>{{ item.product.price }} €</td>
+
+                        <td>
+                            <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btnRed"><strong><i class="fas fa-minus"></i></i></strong></a> {{ item.quantity }}
+                            <a href="{{ path('cart_add', {'id': item.product.id}) }}" class="btn btnRed"><strong><i class="fas fa-plus"></i></a></strong>
+                        </td>
+
+                        <td>{{ item.product.price * item.quantity }} €</td>
+                        <td>
+                            <a href="{{ path('cart_delete', {'id' : item.product.id}) }}" class="btn btnRed"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                <td colspan="3" class="text-right "><strong>Total TTC :</strong></td>
+                <td> <strong>{{ total }} € </strong> </td>
+                <td></td>
+
+                </tfoot>
+
+            </table>
+        {% else %}
+            <p>Votre panier est vide</p>
+        {% endif %}
+
+
+    </div>
+{% endblock %}

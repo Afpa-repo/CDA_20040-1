@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- css -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    {% block stylesheets %}{% endblock %}
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">
+    <a class="navbar-brand" href="{{ path('accueil') }}"><img class="logo" src="{{ asset('img/logo.png') }}"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form action="" method="get">
+                    <fieldset>
+                        <div class="input-group">
+                            <input id="oSaisie" name="oSaisie" type="text" class="form-control" aria-label="Saisie de mots clés" placeholder="Mot(s) clé(s)" required="required">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i> Recherche</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </li>
+            <li class="nav-item ml-3">
+                <a class="btn btn-primary" href="{{ path('cart_index') }}"><i class="fas fa-shopping-cart"></i> Panier </a>
+            </li>
+            <li class="nav-item ml-3">
+                <a class=" btn btn-primary" data-toggle="modal" href="#admin"><i class="fas fa-user-alt"></i> Connexion</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Modal de confirmation de connexion -->
+<div class="modal fade" id="admin" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Connexion</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" id="form" action="" method="POST">
+                    <fieldset>
+                        <div class="form-group row">
+                            <label class="col col-form-label" for="contact">Utilisateur :</label>
+                            <input type="text" placeholder="Nom de l'utilisateur" name="username" class="form-control">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col col-form-label" for="postal">Mot de passe :</label>
+                            <input type="password" placeholder="Mot de passe" name="password" class="form-control">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="logBtn btn btnRed" name="submit">Valider</button>
+                            <input type="button" id="cancel" name="cancel" class="logBtn btn btnRed" data-dismiss="modal" value="Annuler">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% block body %}{% endblock %}
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c0e52a87-d257-4406-9e08-217febc392bd" name="localhost" url="http://localhost/lego">
+        <fileTransfer mountedRoot="C:\wamp64\www\lego\public" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>

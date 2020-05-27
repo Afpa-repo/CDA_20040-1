@@ -1,0 +1,160 @@
+/* ================================
+IMAGES
+================================= */
+.logo {
+    width: 7rem;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+/* ================================
+NAVBAR
+================================= */
+.nav-link {
+    color: white;
+    margin: 0 5rem 0 5rem;
+}
+
+/* ================================
+NAVBAR 2, faire un média query
+================================= */
+.navbar2 {
+    padding-left: 22.5%;
+    color: white;
+    background-color: rgb(231, 0, 0);
+    margin-bottom: -2rem;
+}
+
+.navbar2:hover {
+    color: white;
+    background-color: rgb(231, 0, 0);
+    border-color: white;
+}
+
+/* ================================
+CAROUSEL
+================================= */
+.carousel-inner {
+    margin-top: 4.8rem;
+}
+
+.container-fluid
+{
+    margin-top:5rem;
+}
+
+/* ================================
+BUTTONS
+================================= */
+.btn-primary {
+    background-color: rgb(19, 19, 19);
+    border-color: rgba(128, 128, 128, 0);
+}
+
+.btn-primary:hover {
+    background-color: #505050;
+    border-color: #49404000
+}
+
+.btnRed {
+    color: white;
+    background-color: rgb(231, 0, 0);
+}
+
+.btnRed:hover {
+    color: white;
+    background-color: rgb(231, 67, 67);
+}
+
+/* ================================
+RECHERCHE, faire un média query
+================================= */
+.input-group {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 17%;
+}
+
+.btnBasket {
+    width: 2.3rem;
+    height: 2.3rem;
+}
+
+.price {
+    color: white;
+    font-size: larger;
+    font-weight: 700;
+}
+
+.nav-link {
+    font-family: 'Roboto', sans-serif;
+}
+
+.dropdown-menu {
+    font-family: 'Roboto', sans-serif;
+    background: rgb(231, 0, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+    transition: width .5s;
+    border-radius: 0px;
+    border-width: 0ch;
+}
+
+.dropdown-menu a {
+    color: white;
+    background-color: rgb(231, 0, 0);
+}
+
+.dropdown-menu a:hover {
+    color: white;
+    background-color: rgb(231, 67, 67);
+}
+
+.dropdown-toggle:hover {
+    background-color: rgb(231, 0, 0);
+}
+
+/* ================================
+Modal
+================================= */
+.modal {
+    margin-top: 15%;
+}
+
+.modal-header {
+    background-color: rgb(255, 205, 0);
+}
+
+.form-group {
+    padding: 0 10% 0 10% ;
+}
+
+.logBtn {
+    margin-top: 1.5rem;
+}
+
+/* ================================
+CARDS
+================================= */
+.card {
+    border-width: 1ch;
+}
+
+.card-img-top {
+    height: 260px;
+    border-radius: 3px;
+}
+
+.card-body {
+    height: 6rem;
+}
