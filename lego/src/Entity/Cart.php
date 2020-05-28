@@ -79,7 +79,7 @@ class Cart
         return $this->ordercart;
     }
 
-    public function setOrdercart(Order $ordercart): self
+    public function setOrdercart(?Order $ordercart): self
     {
         $this->ordercart = $ordercart;
 
