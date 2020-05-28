@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\OrderRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -48,12 +50,10 @@ class Order
      */
     private $cartorder;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Customers::class, inversedBy="orders")
-     * @ORM\JoinColumn( nullable=false)
-     */
-    private $customer;
-
+    public function __construct()
+    {
+        $this->cartorder = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -120,7 +120,10 @@ class Order
         return $this;
     }
 
-    public function getCartorder(): ?Cart
+    /**
+     * @return Collection|Cart[]
+     */
+    public function getCartorder(): Collection
     {
         return $this->cartorder;
     }
@@ -137,16 +140,28 @@ class Order
         return $this;
     }
 
-    public function getCustomer(): ?Customers
+    public function addCartorder(Cart $cartorder): self
     {
-        return $this->customerID;
-    }
-
-    public function setCustomer(?Customers $customer): self
-    {
-        $this->customer = $customer;
+        if (!$this->cartorder->contains($cartorder)) {
+            $this->cartorder[] = $cartorder;
+            $cartorder->setOrdercart($this);
+        }
 
         return $this;
     }
+
+    public function removeCartorder(Cart $cartorder): self
+    {
+        if ($this->cartorder->contains($cartorder)) {
+            $this->cartorder->removeElement($cartorder);
+            // set the owning side to null (unless already changed)
+            if ($cartorder->getOrdercart() === $this) {
+                $cartorder->setOrdercart(null);
+            }
+        }
+
+        return $this;
+    }
+
 
 }
