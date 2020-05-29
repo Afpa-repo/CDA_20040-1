@@ -68,14 +68,14 @@ class Products
     private $supplier;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Cart::class, mappedBy="product")
+     * @ORM\OneToMany(targetEntity=OrderDetails::class, mappedBy="products")
      */
-    private $cart;
-
+    private $orderDetails;
 
     public function __construct()
     {
-        $this->cart = new ArrayCollection();
+        $this->OrderDetails = new ArrayCollection();
+        $this->orderDetails = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -192,31 +192,35 @@ class Products
     }
 
     /**
-     * @return Collection|Cart[]
+     * @return Collection|OrderDetails[]
      */
-    public function getCart(): Collection
+    public function getOrderDetails(): Collection
     {
-        return $this->cart;
+        return $this->orderDetails;
     }
 
-    public function addCart(Cart $cart): self
+    public function addOrderDetail(OrderDetails $orderDetail): self
     {
-        if (!$this->cart->contains($cart)) {
-            $this->cart[] = $cart;
-            $cart->addProduct($this);
+        if (!$this->orderDetails->contains($orderDetail)) {
+            $this->orderDetails[] = $orderDetail;
+            $orderDetail->setProducts($this);
         }
 
         return $this;
     }
 
-    public function removeCart(Cart $cart): self
+    public function removeOrderDetail(OrderDetails $orderDetail): self
     {
-        if ($this->cart->contains($cart)) {
-            $this->cart->removeElement($cart);
-            $cart->removeProduct($this);
+        if ($this->orderDetails->contains($orderDetail)) {
+            $this->orderDetails->removeElement($orderDetail);
+            // set the owning side to null (unless already changed)
+            if ($orderDetail->getProducts() === $this) {
+                $orderDetail->setProducts(null);
+            }
         }
 
         return $this;
     }
+
 
 }
