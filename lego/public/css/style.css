@@ -163,3 +163,8 @@ CARDS
     max-height: 150px;
     overflow-y: auto;
 }
+
+.mt-5
+{
+    margin-top: 6rem !important;
+}

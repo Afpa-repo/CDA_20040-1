@@ -7,6 +7,7 @@ namespace App\Service\Cart;
 use App\Entity\Cart;
 
 use App\Entity\Order;
+use App\Entity\OrderDetails;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Repository\ProductsRepository;
@@ -113,18 +114,15 @@ class CartService
                     ->setStatus("Valider");
             $this->manager->persist($order);
 
-
-            //dd($this->getCart());
             foreach($this->getCart() as $item)
             {
-                $cart = new Cart();
-                $cart->addProduct($item['product'])
+                $od = new OrderDetails();
+                $od->setProducts($item['product'])
                     ->setQuantity($item['quantity'])
-                    ->setTotalCost($item['product']->getPrice() * $item['quantity'])
-                    ->setOrdercart($order);
-             $this->manager->persist($cart);
+                    ->setTotal($item['product']->getPrice() * $item['quantity'])
+                    ->setOrders($order);
 
-
+                $this->manager->persist($od);
              $this->deleteProduct($item['product']->getid());
             }
 

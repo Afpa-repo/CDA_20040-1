@@ -46,13 +46,16 @@ class Order
     private $ShippingPrice;
 
     /**
-     * @ORM\OneToMany(targetEntity=Cart::class, mappedBy="ordercart", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity=OrderDetails::class, mappedBy="Orders")
      */
-    private $cartorder;
+    private $orderDetails;
+
+
 
     public function __construct()
     {
-        $this->cartorder = new ArrayCollection();
+        $this->products = new ArrayCollection();
+        $this->orderDetails = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -121,47 +124,36 @@ class Order
     }
 
     /**
-     * @return Collection|Cart[]
+     * @return Collection|OrderDetails[]
      */
-    public function getCartorder(): Collection
+    public function getOrderDetails(): Collection
     {
-        return $this->cartorder;
+        return $this->orderDetails;
     }
 
-    public function setCartorder(Cart $cartorder): self
+    public function addOrderDetail(OrderDetails $orderDetail): self
     {
-        $this->cartorder = $cartorder;
-
-        // set the owning side of the relation if necessary
-        if ($cartorder->getOrdercart() !== $this) {
-            $cartorder->setOrdercart($this);
+        if (!$this->orderDetails->contains($orderDetail)) {
+            $this->orderDetails[] = $orderDetail;
+            $orderDetail->setOrders($this);
         }
 
         return $this;
     }
 
-    public function addCartorder(Cart $cartorder): self
+    public function removeOrderDetail(OrderDetails $orderDetail): self
     {
-        if (!$this->cartorder->contains($cartorder)) {
-            $this->cartorder[] = $cartorder;
-            $cartorder->setOrdercart($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCartorder(Cart $cartorder): self
-    {
-        if ($this->cartorder->contains($cartorder)) {
-            $this->cartorder->removeElement($cartorder);
+        if ($this->orderDetails->contains($orderDetail)) {
+            $this->orderDetails->removeElement($orderDetail);
             // set the owning side to null (unless already changed)
-            if ($cartorder->getOrdercart() === $this) {
-                $cartorder->setOrdercart(null);
+            if ($orderDetail->getOrders() === $this) {
+                $orderDetail->setOrders(null);
             }
         }
 
         return $this;
     }
+
 
 
 }
