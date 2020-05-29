@@ -36,16 +36,23 @@
             </li>
             <li class="nav-item ml-3">
                 <a class="btn btnNav" href="{{ path('cart_index') }}"><i class="fas fa-shopping-cart"></i>
-                    {% if number is defined %}
+                    {% if number is defined and number != null %}
                     Panier ({{number}})
                     {% else %}
-                        Panier (0)
+                        Panier(0)
                     {% endif %}
                 </a>
             </li>
-            <li class="nav-item ml-3">
-                <a class=" btn  btnNav" data-toggle="modal" href="#admin"><i class="fas fa-user-alt"></i> Connexion</a>
-            </li>
+            {% if app.user %}
+                <li class="nav-item ml-3">
+                    <a class=" btn  btn-danger text-white" href="{{ path('app_logout') }}"><i class="fas fa-user-alt"></i> Déconnexion</a>
+                </li>
+            {% else %}
+                <li class="nav-item ml-3">
+                    <a class=" btn  btnNav"  href="{{ path('app_login') }}"><i class="fas fa-user-alt"></i> Connexion</a>
+                </li>
+            {% endif %}
+
         </ul>
     </div>
 </nav>
