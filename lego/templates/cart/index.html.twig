@@ -27,8 +27,8 @@
                         <td>{{ item.product.price }} €</td>
 
                         <td>
-                            <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btnRed"><strong><i class="fas fa-minus"></i></i></strong></a> {{ item.quantity }}
-                            <a href="{{ path('cart_add', {'id': item.product.id}) }}" class="btn btnRed"><strong><i class="fas fa-plus"></i></a></strong>
+                            <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-primary"><strong><i class="fas fa-minus"></i></i></strong></a> {{ item.quantity }}
+                            <a href="{{ path('cart_add', {'id': item.product.id}) }}" class="btn btn-primary"><strong><i class="fas fa-plus"></i></a></strong>
                         </td>
 
                         <td>{{ item.product.price * item.quantity }} €</td>
@@ -42,7 +42,7 @@
                 <tfoot>
                 <td colspan="3" class="text-right "><strong>Total TTC :</strong></td>
                 <td> <strong>{{ total }} € </strong> </td>
-                <td><a href="{{ path('cart_validation')}}" class="btn btnRed">Valider</a></td>
+                <td><a href="{{ path('cart_validation')}}" class="btn btn-success">Valider</a></td>
 
                 </tfoot>
 
@@ -54,6 +54,5 @@
 
     </div>
     <div>
-        <button></button>
     </div>
 {% endblock %}

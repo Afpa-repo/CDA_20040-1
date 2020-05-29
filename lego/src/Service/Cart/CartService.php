@@ -104,18 +104,16 @@ class CartService
     {
         $panier = $this->session->get('panier', []);
 
-        if(!empty($panier))
-        {
+        if (!empty($panier)) {
             $order = new Order();
             $order->setDeliveryAdress('ex')
-                    ->setDeliveryDate(new \DateTime)
-                    ->setOrderDate(new \DateTime)
-                    ->setShippingPrice(25)
-                    ->setStatus("Valider");
+                ->setDeliveryDate(new \DateTime)
+                ->setOrderDate(new \DateTime)
+                ->setShippingPrice(25)
+                ->setStatus("Valider");
             $this->manager->persist($order);
 
-            foreach($this->getCart() as $item)
-            {
+            foreach ($this->getCart() as $item) {
                 $od = new OrderDetails();
                 $od->setProducts($item['product'])
                     ->setQuantity($item['quantity'])
@@ -123,16 +121,26 @@ class CartService
                     ->setOrders($order);
 
                 $this->manager->persist($od);
-             $this->deleteProduct($item['product']->getid());
+                $this->deleteProduct($item['product']->getid());
             }
 
             $this->manager->flush();
 
 
         }
-
-
-
     }
+        public function numberItems()
+    {
+
+        $panier = $this->session->get('panier', []);
+        if(!empty($panier)){
+
+            return count($panier);
+        }
+    }
+
+
+
+
 
 }

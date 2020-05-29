@@ -83,43 +83,45 @@
 
 
             {% for product in product %}
-                <div class="col-lg-2 col-md-3 mb-5">
+                <div class="col-lg-3 col-md-3 mb-5">
                     <div class="card h-100 bg-dark text-white">
                         <img class="card-img-top" src="{{ product.image }}" alt="">
                         <div class="card-body">
                             <p class="card-text"> {{ product.wording }}</p>
                             {# <p class="card-text">{{ product.description }}</p> #}
-                            <span class="price text-right"> {{ product.price }} € </span>
+
                         </div>
                         <div class="card-footer">
-                            {% set res =""  %}
+                            {% set res ="" %}
                             {% set qte = 0 %}
 
                             {% for item in panier %}
 
                                 {% if item.product.id == product.id %}
 
-                                    {%  set res = true %}
+                                    {% set res = true %}
                                     {% set qte = item.quantity %}
 
                                 {% endif %}
 
                             {% endfor %}
-
-                            {% if  res == true %}
-
-                                <small>Votre panier possede
-                                    actuellement {{ qte }} exemplaire de ce produits</small>
-
-                            {% else %}
-                                <strong><a href="{{ path('cart_add', {'id': product.id}) }}" class="btn btnRed">Ajouter
-                                        au panier <i class="fas fa-cart-plus"></i></a></strong>
-
-                            {% endif %}
+                            <div class="row">
+                            <div class="offset-5">
+                            <span class="price "> {{ product.price }} € </span>
+                            </div>
+                            <div class="col-1 offset-3">
+                            <strong><a href="{{ path('cart_add', {'id': product.id}) }}" class="btn btnRed"><i class="fas fa-cart-plus"></i></a></strong>
+                            </div>
+                            </div>
 
 
                         </div>
                     </div>
+                    {% if  res == true %}
+
+                        <small class="text-primary">Votre panier possede
+                            actuellement {{ qte }} exemplaire de ce produits</small>
+                    {% endif %}
                 </div>
             {% endfor %}
 
