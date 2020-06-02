@@ -156,6 +156,9 @@
             "./config/packages/sensio_framework_extra.yaml"
         ]
     },
+    "stripe/stripe-php": {
+        "version": "v3.23.0"
+    },
     "symfony/asset": {
         "version": "v4.4.8"
     },

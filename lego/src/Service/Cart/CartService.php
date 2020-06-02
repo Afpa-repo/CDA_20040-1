@@ -2,15 +2,14 @@
 
 
 namespace App\Service\Cart;
-
-
-use App\Entity\Cart;
-
 use App\Entity\Order;
 use App\Entity\OrderDetails;
+use App\Entity\User;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Repository\ProductsRepository;
+
 
 class CartService
 {
@@ -19,11 +18,13 @@ class CartService
     protected $manager;
 
 
-    public function __construct(SessionInterface $session, ProductsRepository $productrepo, EntityManagerInterface $manager)
+
+    public function __construct(SessionInterface $session, ProductsRepository $productrepo, EntityManagerInterface $manager, UserRepository $user)
     {
         $this->session = $session;
         $this->productrepo = $productrepo;
         $this->manager = $manager;
+        $this->user = $user;
 
     }
 
@@ -103,6 +104,9 @@ class CartService
     public function valider ()
     {
         $panier = $this->session->get('panier', []);
+        $mail = $this->session->get('_security.last_username');
+        $id = $this->user->findOneBy(['email'=>$mail])->getId();
+        $user = $this->user->find($id);
 
         if (!empty($panier)) {
             $order = new Order();
@@ -113,12 +117,15 @@ class CartService
                 ->setStatus("Valider");
             $this->manager->persist($order);
 
+
+
             foreach ($this->getCart() as $item) {
                 $od = new OrderDetails();
                 $od->setProducts($item['product'])
                     ->setQuantity($item['quantity'])
                     ->setTotal($item['product']->getPrice() * $item['quantity'])
-                    ->setOrders($order);
+                    ->setOrders($order)
+                    ->setUser($user);
 
                 $this->manager->persist($od);
                 $this->deleteProduct($item['product']->getid());

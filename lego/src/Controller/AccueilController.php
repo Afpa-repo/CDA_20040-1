@@ -62,7 +62,7 @@ class AccueilController extends AbstractController
 
         $serializer = new Serializer($normalizers, $encorders);
 
-        $data = $serializer->serialize($data,'json', [AbstractNormalizer::IGNORED_ATTRIBUTES => ['supplier'],['cart']]);
+        $data = $serializer->serialize($data,'json', [AbstractNormalizer::IGNORED_ATTRIBUTES => ['supplier']]);
 
 
 
