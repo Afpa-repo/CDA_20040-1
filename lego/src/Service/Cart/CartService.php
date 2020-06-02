@@ -4,18 +4,22 @@
 namespace App\Service\Cart;
 use App\Entity\Order;
 use App\Entity\OrderDetails;
-use App\Entity\User;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Dompdf\Dompdf;
+use Dompdf\Options;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Repository\ProductsRepository;
 
 
-class CartService
+class CartService extends AbstractController
 {
     protected $session;
     protected $productrepo;
     protected $manager;
+    protected $user;
 
 
 
@@ -101,12 +105,52 @@ class CartService
 
     }
 
+    public function createPDF( Order $order)
+    {
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial');
+        $pdfOptions->setIsRemoteEnabled(true);
+
+        // Instantiate Dompdf with our options
+        $dompdf = new Dompdf($pdfOptions);
+
+        // Retrieve the HTML generated in our twig file
+        $html = $this->renderView('PDF/pdf.html.twig', [
+            'order'=>$order,'items'=>$this->getCart(),'total'=>$this->getTotal(),
+        ]);
+
+        // Load HTML to Dompdf
+        $dompdf->loadHtml($html);
+
+        // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
+        $dompdf->setPaper('A4', 'portrait');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Store PDF Binary Data
+        $output = $dompdf->output();
+
+        // In this case, we want to write the file in the public directory
+        $publicDirectory =  '../public/PDF';
+        // e.g /var/www/project/public/mypdf.pdf
+        $pdfFilepath =  $publicDirectory . '/com'.$order->getId().'.pdf';
+
+        // Write file to the desired path
+        file_put_contents($pdfFilepath, $output);
+
+        // Send some text response
+        return new Response("The PDF file has been succesfully generated !");
+
+    }
+
     public function valider ()
     {
         $panier = $this->session->get('panier', []);
         $mail = $this->session->get('_security.last_username');
         $id = $this->user->findOneBy(['email'=>$mail])->getId();
         $user = $this->user->find($id);
+
 
         if (!empty($panier)) {
             $order = new Order();
@@ -116,6 +160,8 @@ class CartService
                 ->setShippingPrice(25)
                 ->setStatus("Valider");
             $this->manager->persist($order);
+            $this->manager->flush();
+            $this->createPDF($order);
 
 
 
@@ -132,6 +178,7 @@ class CartService
             }
 
             $this->manager->flush();
+
 
 
         }
