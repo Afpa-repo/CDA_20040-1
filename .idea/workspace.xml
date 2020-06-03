@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c55f8eca-345a-42fc-ba7c-ccc52ae46878" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego/.env" beforeDir="false" afterPath="$PROJECT_DIR$/lego/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego/src/Migrations/Version20200602070516.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/lego/templates/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +190,8 @@
       <workItem from="1591175016595" duration="995000" />
       <workItem from="1591176178587" duration="2261000" />
       <workItem from="1591178632752" duration="1178000" />
+      <workItem from="1591180399422" duration="245000" />
+      <workItem from="1591180748123" duration="1645000" />
     </task>
     <servers />
   </component>
@@ -243,9 +241,9 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="561" y="271" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.768@0.0.1366.768" timestamp="1590605582134" />
-    <state x="0" y="0" width="555" height="768" key="find.popup" timestamp="1591178465992">
+    <state x="0" y="0" width="555" height="768" key="find.popup" timestamp="1591182363583">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="0" y="0" width="555" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1591178465992" />
+    <state x="0" y="0" width="555" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1591182363583" />
   </component>
 </project>
