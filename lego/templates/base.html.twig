@@ -39,13 +39,13 @@
                     {% if number is defined and number != null %}
                     Panier ({{number}})
                     {% else %}
-                        Panier(0)
+                        Panier (0)
                     {% endif %}
                 </a>
             </li>
             {% if app.user %}
                 <li class="nav-item ml-3">
-                    <a class=" btn  btn-danger text-white" href="{{ path('app_logout') }}"><i class="fas fa-user-alt"></i> Déconnexion</a>
+                    <a class=" btn  btn-danger text-white" href="{{ path('app_save') }}"><i class="fas fa-user-alt"></i> Déconnexion</a>
                 </li>
             {% else %}
                 <li class="nav-item ml-3">
