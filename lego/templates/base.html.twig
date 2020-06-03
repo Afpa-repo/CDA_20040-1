@@ -35,48 +35,27 @@
                 </form>
             </li>
             <li class="nav-item ml-3">
-                <a class="btn btn-primary" href="{{ path('cart_index') }}"><i class="fas fa-shopping-cart"></i> Panier
+                <a class="btn btnNav" href="{{ path('cart_index') }}"><i class="fas fa-shopping-cart"></i>
+                    {% if number is defined and number != null %}
+                    Panier ({{number}})
+                    {% else %}
+                        Panier(0)
+                    {% endif %}
                 </a>
             </li>
-            <li class="nav-item ml-3">
-                <a class=" btn btn-primary" data-toggle="modal" href="#admin"><i class="fas fa-user-alt"></i> Connexion</a>
-            </li>
+            {% if app.user %}
+                <li class="nav-item ml-3">
+                    <a class=" btn  btn-danger text-white" href="{{ path('app_logout') }}"><i class="fas fa-user-alt"></i> Déconnexion</a>
+                </li>
+            {% else %}
+                <li class="nav-item ml-3">
+                    <a class=" btn  btnNav"  href="{{ path('app_login') }}"><i class="fas fa-user-alt"></i> Connexion</a>
+                </li>
+            {% endif %}
+
         </ul>
     </div>
 </nav>
-
-<!-- Modal de confirmation de connexion -->
-<div class="modal fade" id="admin" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Connexion</h4>
-            </div>
-            <div class="modal-body">
-                <form role="form" id="form" action="" method="POST">
-                    <fieldset>
-                        <div class="form-group row">
-                            <label class="col col-form-label" for="contact">Utilisateur :</label>
-                            <input type="text" placeholder="Nom de l'utilisateur" name="username" class="form-control">
-                        </div>
-                        <div class="form-group row">
-                            <label class="col col-form-label" for="postal">Mot de passe :</label>
-                            <input type="password" placeholder="Mot de passe" name="password" class="form-control">
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="logBtn btn btnRed" name="submit">Valider</button>
-                            <input type="button" id="cancel" name="cancel" class="logBtn btn btnRed"
-                                   data-dismiss="modal" value="Annuler">
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 {% block body %}{% endblock %}
 
 

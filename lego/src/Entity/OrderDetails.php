@@ -35,6 +35,12 @@ class OrderDetails
      */
     private $Orders;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="orderDetails")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $User;
+
 
 
     public function getQuantity(): ?int
@@ -81,6 +87,18 @@ class OrderDetails
     public function setOrders(?Order $Orders): self
     {
         $this->Orders = $Orders;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->User;
+    }
+
+    public function setUser(?User $User): self
+    {
+        $this->User = $User;
 
         return $this;
     }

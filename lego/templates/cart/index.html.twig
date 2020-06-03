@@ -16,7 +16,7 @@
                     <th>Prix</th>
                     <th>Quantité</th>
                     <th>Total</th>
-                    <th></th>
+                    <th>Supprimer</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -27,8 +27,8 @@
                         <td>{{ item.product.price }} €</td>
 
                         <td>
-                            <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btnRed"><strong><i class="fas fa-minus"></i></i></strong></a> {{ item.quantity }}
-                            <a href="{{ path('cart_add', {'id': item.product.id}) }}" class="btn btnRed"><strong><i class="fas fa-plus"></i></a></strong>
+                            <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-primary mr-1"><strong><i class="fas fa-minus"></i></i></strong></a> {{ item.quantity }}
+                            <a href="{{ path('cart_add', {'id': item.product.id}) }}" class="btn btn-primary ml-1"><strong><i class="fas fa-plus"></i></a></strong>
                         </td>
 
                         <td>{{ item.product.price * item.quantity }} €</td>
@@ -42,7 +42,12 @@
                 <tfoot>
                 <td colspan="3" class="text-right "><strong>Total TTC :</strong></td>
                 <td> <strong>{{ total }} € </strong> </td>
-                <td><a href="{{ path('cart_validation')}}" class="btn btnRed">Valider</a></td>
+
+                {% if app.user %}
+                <td><a href="{{ path('cart_validation')}}" class="btn btn-success">Valider</a></td>
+                {% else %}
+                <p>Vous devez vous connecter afin de finaliser votre commande : <a href="{{ path('app_login') }}">Se connecter</a></p>
+                {% endif %}
 
                 </tfoot>
 
@@ -54,6 +59,5 @@
 
     </div>
     <div>
-        <button></button>
     </div>
 {% endblock %}
