@@ -74,7 +74,6 @@ class Products
 
     public function __construct()
     {
-        $this->OrderDetails = new ArrayCollection();
         $this->orderDetails = new ArrayCollection();
     }
 

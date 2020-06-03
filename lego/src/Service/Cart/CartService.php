@@ -4,6 +4,8 @@
 namespace App\Service\Cart;
 use App\Entity\Order;
 use App\Entity\OrderDetails;
+use App\Entity\Savecart;
+use App\Repository\SavecartRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Dompdf\Dompdf;
@@ -20,19 +22,23 @@ class CartService extends AbstractController
     protected $productrepo;
     protected $manager;
     protected $user;
+    protected $save;
 
 
 
-    public function __construct(SessionInterface $session, ProductsRepository $productrepo, EntityManagerInterface $manager, UserRepository $user)
+    public function __construct(SessionInterface $session, ProductsRepository $productrepo, EntityManagerInterface $manager, UserRepository $user, SavecartRepository $save)
     {
         $this->session = $session;
         $this->productrepo = $productrepo;
         $this->manager = $manager;
         $this->user = $user;
+        $this->save = $save;
 
     }
 
-    public function add(int $id){
+    public function add(int $id)
+
+    {
 
         $panier = $this->session->get('panier', []);
 
@@ -42,8 +48,40 @@ class CartService extends AbstractController
             $panier[$id] = 1;
         }
 
-
         $this->session->set('panier', $panier);
+    }
+
+    public function addsave()
+    {
+        $mail = $this->session->get('_security.last_username');
+        $id = $this->user->findOneBy(['email'=>$mail])->getId();
+
+        foreach($this->getCart() as $item)
+        {
+            if(isset($item['product']) || $item['user'] != $id)
+            {
+                $save = new Savecart();
+                $save ->setIdproduct($item['product']->getId())
+                    ->setIduser($id)
+                    ->setQuantity($item['quantity'])
+                    ->setTotal($item['product']->getPrice() * $item['quantity']);
+                $this->manager->persist($save);
+            }
+            else
+            {
+                $recup = $this->save->findOneBy(['iduser'=>$id ,'idproduct' =>$item['product']->getId()]);
+
+                if ($item['quantity'] != $recup->getQuantity())
+                {
+                    $recup->setQuantity($item['quantity']);
+                }
+                $this->manager->persist($recup);
+            }
+        }
+
+        $this->manager->flush();
+
+
     }
     public function remove(int $id){
 
