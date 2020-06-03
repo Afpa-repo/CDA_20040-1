@@ -81,7 +81,6 @@ class CartService extends AbstractController
 
         $this->manager->flush();
 
-
     }
     public function remove(int $id){
 
@@ -170,12 +169,13 @@ class CartService extends AbstractController
         $output = $dompdf->output();
 
         // In this case, we want to write the file in the public directory
-        $publicDirectory =  '../public/PDF';
+        $projectDir = $this->getParameter('kernel.project_dir');
+
         // e.g /var/www/project/public/mypdf.pdf
-        $pdfFilepath =  $publicDirectory . '/com'.$order->getId().'.pdf';
+        $finalPath = $projectDir . join(DIRECTORY_SEPARATOR, ['', 'public', 'PDF', '']) . 'com'.$order->getId().'.pdf';
 
         // Write file to the desired path
-        file_put_contents($pdfFilepath, $output);
+        file_put_contents($finalPath, $output);
 
         // Send some text response
         return new Response("The PDF file has been succesfully generated !");

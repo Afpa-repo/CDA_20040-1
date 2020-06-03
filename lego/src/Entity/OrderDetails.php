@@ -24,7 +24,7 @@ class OrderDetails
 
     /**
      *
-     * @Id @ORM\ManyToOne(targetEntity=products::class, inversedBy="orderDetails")
+     * @Id @ORM\ManyToOne(targetEntity=Products::class, inversedBy="orderDetails")
      *  @ORM\JoinColumn(nullable=false)
      */
     private $products;
