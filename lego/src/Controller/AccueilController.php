@@ -28,12 +28,7 @@ class AccueilController extends AbstractController
     public function index(CartService $service)
     {
         $repo = $this->getDoctrine()->getRepository(Products::class);
-        $product = $repo->findAll();
-
-        $panier = $service->getCart();
-
-
-        return $this->render('index.html.twig',['product'=>$product,'panier'=>$panier]);
+        return $this->render('index.html.twig',['product'=>$repo->findAll(),'panier'=>$service->getCart(),'number'=> $service->numberItems()]);
 
 
 
@@ -65,7 +60,7 @@ class AccueilController extends AbstractController
 
         $serializer = new Serializer($normalizers, $encorders);
 
-        $data = $serializer->serialize($data,'json', [AbstractNormalizer::IGNORED_ATTRIBUTES => ['supplier'],['cart']]);
+        $data = $serializer->serialize($data,'json', [AbstractNormalizer::IGNORED_ATTRIBUTES => ['supplier']]);
 
 
 

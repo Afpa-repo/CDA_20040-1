@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <!-- css -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+
+<body>
+<div class="row mb-0">
+    <div class="col-2">
+        <img src="../public/img/logo.png" class="img-fluid" alt="">
+    </div>
+    <div class="col-7 offset-3">
+        <h3>Facture n° FA{{ order.id }}</h3>
+        <h3>(Commande N° {{ order.id }} du {{ order.orderdate |date("d/m/Y") }})</h3>
+        <h3> Date {{ "now"|date("d/m/Y") }}</h3>
+
+    </div>
+
+</div>
+<hr>
+
+<div class="container-fluid ">
+    <div class="mt-5">
+        <h1>Votre Panier </h1>
+    </div>
+
+    <table class="table text-center">
+        <thead>
+        <tr>
+            <th>REF</th>
+            <th>DESIGNATION</th>
+            <th>PU HT</th>
+            <th>QUANTITE</th>
+            <th>TOTAL HT</th>
+            <th>TVA</th>
+            <th>TOTAL TTC</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+
+            <tr>
+                <td>{{ item.product.id }}</td>
+                <td>{{ item.product.wording }}</td>
+                <td>{{ item.product.price }} €</td>
+
+                <td>{{ item.quantity }}</td>
+
+                <td>{{ item.product.price * item.quantity }} €</td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <td colspan="4" class="text-right "><strong>Total </strong></td>
+        <td><strong>{{ total }} € </strong></td>
+
+        </tfoot>
+
+    </table>
+</div>
+<div>
+</div>
+</body>

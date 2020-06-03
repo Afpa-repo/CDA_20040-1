@@ -50,14 +50,16 @@ CAROUSEL
 /* ================================
 BUTTONS
 ================================= */
-.btn-primary {
+.btnNav {
     background-color: rgb(19, 19, 19);
     border-color: rgba(128, 128, 128, 0);
+    color:white;
 }
 
-.btn-primary:hover {
+.btnNav:hover {
     background-color: #505050;
-    border-color: #49404000
+    border-color: #49404000;
+    color:white;
 }
 
 .btnRed {

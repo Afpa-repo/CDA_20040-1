@@ -2,28 +2,33 @@
 
 
 namespace App\Service\Cart;
-
-
-use App\Entity\Cart;
-
 use App\Entity\Order;
 use App\Entity\OrderDetails;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Dompdf\Dompdf;
+use Dompdf\Options;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Repository\ProductsRepository;
 
-class CartService
+
+class CartService extends AbstractController
 {
     protected $session;
     protected $productrepo;
     protected $manager;
+    protected $user;
 
 
-    public function __construct(SessionInterface $session, ProductsRepository $productrepo, EntityManagerInterface $manager)
+
+    public function __construct(SessionInterface $session, ProductsRepository $productrepo, EntityManagerInterface $manager, UserRepository $user)
     {
         $this->session = $session;
         $this->productrepo = $productrepo;
         $this->manager = $manager;
+        $this->user = $user;
 
     }
 
@@ -100,39 +105,96 @@ class CartService
 
     }
 
+    public function createPDF( Order $order)
+    {
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial');
+        $pdfOptions->setIsRemoteEnabled(true);
+
+        // Instantiate Dompdf with our options
+        $dompdf = new Dompdf($pdfOptions);
+
+        // Retrieve the HTML generated in our twig file
+        $html = $this->renderView('PDF/pdf.html.twig', [
+            'order'=>$order,'items'=>$this->getCart(),'total'=>$this->getTotal(),
+        ]);
+
+        // Load HTML to Dompdf
+        $dompdf->loadHtml($html);
+
+        // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
+        $dompdf->setPaper('A4', 'portrait');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Store PDF Binary Data
+        $output = $dompdf->output();
+
+        // In this case, we want to write the file in the public directory
+        $publicDirectory =  '../public/PDF';
+        // e.g /var/www/project/public/mypdf.pdf
+        $pdfFilepath =  $publicDirectory . '/com'.$order->getId().'.pdf';
+
+        // Write file to the desired path
+        file_put_contents($pdfFilepath, $output);
+
+        // Send some text response
+        return new Response("The PDF file has been succesfully generated !");
+
+    }
+
     public function valider ()
     {
         $panier = $this->session->get('panier', []);
+        $mail = $this->session->get('_security.last_username');
+        $id = $this->user->findOneBy(['email'=>$mail])->getId();
+        $user = $this->user->find($id);
 
-        if(!empty($panier))
-        {
+
+        if (!empty($panier)) {
             $order = new Order();
             $order->setDeliveryAdress('ex')
-                    ->setDeliveryDate(new \DateTime)
-                    ->setOrderDate(new \DateTime)
-                    ->setShippingPrice(25)
-                    ->setStatus("Valider");
+                ->setDeliveryDate(new \DateTime)
+                ->setOrderDate(new \DateTime)
+                ->setShippingPrice(25)
+                ->setStatus("Valider");
             $this->manager->persist($order);
+            $this->manager->flush();
+            $this->createPDF($order);
 
-            foreach($this->getCart() as $item)
-            {
+
+
+            foreach ($this->getCart() as $item) {
                 $od = new OrderDetails();
                 $od->setProducts($item['product'])
                     ->setQuantity($item['quantity'])
                     ->setTotal($item['product']->getPrice() * $item['quantity'])
-                    ->setOrders($order);
+                    ->setOrders($order)
+                    ->setUser($user);
 
                 $this->manager->persist($od);
-             $this->deleteProduct($item['product']->getid());
+                $this->deleteProduct($item['product']->getid());
             }
 
             $this->manager->flush();
 
 
+
         }
-
-
-
     }
+        public function numberItems()
+    {
+
+        $panier = $this->session->get('panier', []);
+        if(!empty($panier)){
+
+            return count($panier);
+        }
+    }
+
+
+
+
 
 }

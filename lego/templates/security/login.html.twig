@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connexion{% endblock %}
 
 {% block body %}
     <div class="container-fluid mt-5">
@@ -19,6 +19,8 @@
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
     >
+
+    <p>Pas encore de compte ? <a href="{{ path('app_register') }}">Inscrivez-vous</a></p>
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
