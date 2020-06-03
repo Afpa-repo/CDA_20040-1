@@ -2,8 +2,6 @@
 
 
 namespace App\Controller;
-
-
 use App\Entity\Products;
 use App\Service\Cart\CartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
