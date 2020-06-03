@@ -82,6 +82,22 @@ class CartService extends AbstractController
         $this->manager->flush();
 
     }
+
+    public function recupsave()
+    {
+        $mail = $this->session->get('_security.last_username');
+        $id = $this->user->findOneBy(['email'=>$mail])->getId();
+        $recup = $this->save->findBy(['iduser' =>$id]);
+
+
+        foreach($recup as $item )
+        {
+            $this->add($item->getIdproduct());
+            $this->manager->remove($item);
+            $this->manager->flush();
+        }
+
+    }
     public function remove(int $id){
 
         $panier = $this->session->get('panier', []);
