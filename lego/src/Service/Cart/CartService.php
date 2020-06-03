@@ -14,6 +14,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Repository\ProductsRepository;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 
 
 class CartService extends AbstractController
@@ -23,16 +25,18 @@ class CartService extends AbstractController
     protected $manager;
     protected $user;
     protected $save;
+    protected $mailer;
 
 
 
-    public function __construct(SessionInterface $session, ProductsRepository $productrepo, EntityManagerInterface $manager, UserRepository $user, SavecartRepository $save)
+    public function __construct(SessionInterface $session, ProductsRepository $productrepo, EntityManagerInterface $manager, UserRepository $user, SavecartRepository $save ,MailerInterface $mailer)
     {
         $this->session = $session;
         $this->productrepo = $productrepo;
         $this->manager = $manager;
         $this->user = $user;
         $this->save = $save;
+        $this->mailer = $mailer;
 
     }
 
@@ -204,6 +208,8 @@ class CartService extends AbstractController
         $mail = $this->session->get('_security.last_username');
         $id = $this->user->findOneBy(['email'=>$mail])->getId();
         $user = $this->user->find($id);
+        $projectDir = $this->getParameter('kernel.project_dir');
+
 
 
         if (!empty($panier)) {
@@ -216,7 +222,7 @@ class CartService extends AbstractController
             $this->manager->persist($order);
             $this->manager->flush();
             $this->createPDF($order);
-
+            $finalPath = $projectDir . join(DIRECTORY_SEPARATOR, ['', 'public', 'PDF', '']) . 'com'.$order->getId().'.pdf';
 
 
             foreach ($this->getCart() as $item) {
@@ -232,6 +238,16 @@ class CartService extends AbstractController
             }
 
             $this->manager->flush();
+
+
+            $email = (new Email())
+                ->from('hello@example.com')
+                ->to($mail)
+                ->attachFromPath($finalPath)
+                ->subject('Lego : Facture commande n°'.$order->getId())
+                ->text('Votre facture de la commande n°'.$order->getId());
+
+            $this->mailer->send($email);
 
 
 
