@@ -20,7 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c55f8eca-345a-42fc-ba7c-ccc52ae46878" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/lego/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/src/Migrations/Version20200603102811.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/lego/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +148,12 @@
       <path value="$PROJECT_DIR$/lego/vendor/symfony/monolog-bundle" />
       <path value="$PROJECT_DIR$/lego/vendor/symfony/browser-kit" />
       <path value="$PROJECT_DIR$/lego/vendor/symfony/twig-pack" />
+      <path value="$PROJECT_DIR$/lego/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/lego/vendor/stripe/stripe-php" />
+      <path value="$PROJECT_DIR$/lego/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/lego/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/lego/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/lego/vendor/flosch/stripe-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1cUJvIFsvVYfJ0IafDSCtazFSNl" />
@@ -192,6 +202,7 @@
       <workItem from="1591178632752" duration="1178000" />
       <workItem from="1591180399422" duration="245000" />
       <workItem from="1591180748123" duration="1645000" />
+      <workItem from="1591184019923" duration="1145000" />
     </task>
     <servers />
   </component>
@@ -211,10 +222,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591176381542">
+    <state x="275" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591184145718">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1591176381542" />
+    <state x="275" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1591184145718" />
     <state x="328" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590692353562">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

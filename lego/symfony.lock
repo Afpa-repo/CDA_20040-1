@@ -96,6 +96,9 @@
     "egulias/email-validator": {
         "version": "2.1.17"
     },
+    "flosch/stripe-bundle": {
+        "version": "2.1.0"
+    },
     "fzaninotto/faker": {
         "version": "v1.9.1"
     },
@@ -167,6 +170,9 @@
         "files": [
             "./config/packages/sensio_framework_extra.yaml"
         ]
+    },
+    "stripe/stripe-php": {
+        "version": "v3.23.0"
     },
     "symfony/asset": {
         "version": "v4.4.8"
