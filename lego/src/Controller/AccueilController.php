@@ -27,10 +27,87 @@ class AccueilController extends AbstractController
     public function index(CartService $service)
     {
         $repo = $this->getDoctrine()->getRepository(Products::class);
+
         return $this->render('index.html.twig',['product'=>$repo->findAll(),'panier'=>$service->getCart(),'number'=> $service->numberItems()]);
 
+    }
+
+    /**
+     *@Route("/gamme/{gamme}",name="gamme")
+     */
+    public function parGamme(CartService $service, string $gamme)
+    {
+        $repo = $this->getDoctrine()->getRepository(Products::class);
+
+        return $this->render('index.html.twig',['product'=>$repo->findBy(['Gamme'=>$gamme]),'panier'=>$service->getCart(),'number'=> $service->numberItems()]);
+    }
+
+    /**
+     *@Route("/theme/{theme}",name="theme")
+     */
+    public function parTheme(CartService $service, string $theme)
+    {
+        $repo = $this->getDoctrine()->getRepository(Products::class);
 
 
+        return $this->render('index.html.twig',['product'=>$repo->findBy(['Theme'=>$theme]),'panier'=>$service->getCart(),'number'=> $service->numberItems()]);
+    }
+
+    /**
+     *@Route("/price/{price}",name="price")
+     */
+    public function parPrice(CartService $service, int $price)
+    {
+        $repo = $this->getDoctrine()->getRepository(Products::class);
+
+        $products = $repo->findAll();
+
+        if($price === 1)
+        {
+            foreach($products as $product )
+            {
+
+                if($product->getPrice() <= 50)
+                {
+
+                    $productri[] = $product;
+
+                }
+
+            }
+
+        }
+        elseif ($price === 51)
+        {
+            foreach($products as $product )
+            {
+
+                if($product->getPrice() > 50 && $product->getPrice() <=100 )
+                {
+
+                    $productri[] = $product;
+
+                }
+
+            }
+
+        }
+        else
+        {
+            foreach($products as $product )
+            {
+
+                if($product->getPrice() > 100 )
+                {
+
+                    $productri[] = $product;
+
+                }
+
+            }
+        }
+
+        return $this->render('index.html.twig',['product'=>$productri,'panier'=>$service->getCart(),'number'=> $service->numberItems()]);
     }
 
     /**
