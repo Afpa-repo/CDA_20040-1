@@ -19,19 +19,144 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b78266f-1a15-4c8e-b0e3-e2a7ebd7f2a3" name="Default Changelist" comment="" />
+    <list default="true" id="c55f8eca-345a-42fc-ba7c-ccc52ae46878" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/lego/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/src/Migrations/Version20200603102811.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/lego/symfony.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/lego/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1cUTNMjpoU6tz9cqLLm4O5L6Wea" />
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/inflector" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/intl" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/lego/vendor/ocramius/package-versions" />
+      <path value="$PROJECT_DIR$/lego/vendor/ocramius/proxy-manager" />
+      <path value="$PROJECT_DIR$/lego/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/lego/vendor/webimpress/safe-writer" />
+      <path value="$PROJECT_DIR$/lego/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/lego/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/lego/vendor/composer" />
+      <path value="$PROJECT_DIR$/lego/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/lego/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/lego/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/lego/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/lego/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/lego/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/lego/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/lego/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/lego/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/orm-pack" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/profiler-pack" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/lego/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/lego/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/lego/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/lego/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/serializer-pack" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/web-link" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/debug-pack" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/test-pack" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/security-guard" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/twig-pack" />
+      <path value="$PROJECT_DIR$/lego/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/lego/vendor/stripe/stripe-php" />
+      <path value="$PROJECT_DIR$/lego/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/lego/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/lego/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/lego/vendor/flosch/stripe-bundle" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1cUJvIFsvVYfJ0IafDSCtazFSNl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -39,29 +164,45 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lego" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3b78266f-1a15-4c8e-b0e3-e2a7ebd7f2a3" name="Default Changelist" comment="" />
-      <created>1590582132342</created>
+      <changelist id="c55f8eca-345a-42fc-ba7c-ccc52ae46878" name="Default Changelist" comment="" />
+      <created>1590577469102</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1590582132342</updated>
-      <workItem from="1590582149208" duration="4151000" />
+      <updated>1590577469102</updated>
+      <workItem from="1590577485462" duration="16430000" />
+      <workItem from="1590628975943" duration="385000" />
+      <workItem from="1590685258705" duration="6586000" />
+      <workItem from="1590694393719" duration="2897000" />
+      <workItem from="1590697670887" duration="1785000" />
+      <workItem from="1590705014244" duration="457000" />
+      <workItem from="1590708242325" duration="5031000" />
+      <workItem from="1590777637355" duration="80000" />
+      <workItem from="1590777894667" duration="2538000" />
+      <workItem from="1591173605839" duration="1117000" />
+      <workItem from="1591175016595" duration="995000" />
+      <workItem from="1591176178587" duration="2261000" />
+      <workItem from="1591178632752" duration="1178000" />
+      <workItem from="1591180399422" duration="245000" />
+      <workItem from="1591180748123" duration="1645000" />
+      <workItem from="1591184019923" duration="1145000" />
     </task>
     <servers />
   </component>
@@ -78,11 +219,42 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1590588570407">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="275" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591184145718">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1590588570407" />
+    <state x="275" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1591184145718" />
+    <state x="328" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590692353562">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="328" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.768@0.0.1366.768" timestamp="1590692353562" />
+    <state x="430" y="228" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1590691606333">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="430" y="228" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.768@0.0.1366.768" timestamp="1590691606333" />
+    <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1590705459581">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1590705459581" />
+    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1590690255074" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1590708464955">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1590708464955" />
+    <state x="184" y="29" key="SettingsEditor" timestamp="1590708559207">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="184" y="29" key="SettingsEditor/0.0.1366.768/1366.0.1440.900@0.0.1366.768" timestamp="1590708559207" />
+    <state x="184" y="29" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1590690263268" />
+    <state x="561" y="271" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1590605582134">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="561" y="271" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.768@0.0.1366.768" timestamp="1590605582134" />
+    <state x="0" y="0" width="555" height="768" key="find.popup" timestamp="1591182363583">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="0" y="0" width="555" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1591182363583" />
   </component>
 </project>
