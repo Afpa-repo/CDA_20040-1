@@ -4,13 +4,13 @@
 namespace App\Controller;
 use App\Entity\Products;
 use App\Service\Cart\CartService;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/")
@@ -29,7 +29,6 @@ class AccueilController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(Products::class);
 
         return $this->render('index.html.twig',['product'=>$repo->findAll(),'panier'=>$service->getCart(),'number'=> $service->numberItems()]);
-
     }
 
     /**
@@ -108,6 +107,17 @@ class AccueilController extends AbstractController
         }
 
         return $this->render('index.html.twig',['product'=>$productri,'panier'=>$service->getCart(),'number'=> $service->numberItems()]);
+
+    }
+
+ /**
+     * @Route("/{id}", name="detail")
+     */
+    public function detail(Products $detail)
+    {
+        return $this->render('detail.html.twig', [
+            'detail' => $detail
+        ]);
     }
 
     /**
