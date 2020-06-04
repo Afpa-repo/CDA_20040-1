@@ -6,7 +6,6 @@ use App\Entity\Products;
 use App\Service\Cart\CartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
@@ -65,6 +64,15 @@ class AccueilController extends AbstractController
 
 
         return new JsonResponse($data, 200 ,[], true);
+    }
+
+    /**
+     * @Route("add/{id}",name="acc_add")
+     */
+    public function addhome($id, CartService $service)
+    {
+        $service->add($id);
+        return $this->redirectToroute('accueil');
     }
 
 }

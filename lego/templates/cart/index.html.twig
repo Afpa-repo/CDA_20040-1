@@ -27,8 +27,8 @@
                         <td>{{ item.product.price }} €</td>
 
                         <td>
-                            <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-primary mr-1"><strong><i class="fas fa-minus"></i></i></strong></a> {{ item.quantity }}
-                            <a href="{{ path('cart_add', {'id': item.product.id}) }}" class="btn btn-primary ml-1"><strong><i class="fas fa-plus"></i></a></strong>
+                            <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-primary mr-1"><strong><i class="fas fa-minus"></i></strong></a> {{ item.quantity }}
+                            <a href="{{ path('cart_add', {'id': item.product.id}) }}" class="btn btn-primary ml-1"><strong><i class="fas fa-plus"></i></strong></a>
                         </td>
 
                         <td>{{ item.product.price * item.quantity }} €</td>
