@@ -27,27 +27,7 @@ class ProductsFixtures extends Fixture
 
             $manager->persist($supplier);
 
-            for ($i = 1; $i <= 12; $i++)
-
-            {
-                $product = new Products();
-                $product->setWording($faker->sentence())
-                    ->setRef($faker->word)
-                    ->setPrice($faker->randomFloat(2, 20, 100))
-                    ->setAge($faker->numberBetween(1, 12))
-                    ->setDescription($faker->text())
-                    ->setImage($faker->imageURL())
-                    ->setSupplier($supplier);
-
-
-                $manager->persist($product);
-            }
-
-
-
+            $manager->flush();
         }
-
-
-        $manager->flush();
     }
 }

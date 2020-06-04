@@ -110,6 +110,12 @@
       <path value="$PROJECT_DIR$/lego/vendor/symfony/monolog-bundle" />
       <path value="$PROJECT_DIR$/lego/vendor/symfony/browser-kit" />
       <path value="$PROJECT_DIR$/lego/vendor/symfony/twig-pack" />
+      <path value="$PROJECT_DIR$/lego/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/lego/vendor/stripe/stripe-php" />
+      <path value="$PROJECT_DIR$/lego/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/lego/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/lego/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/lego/vendor/flosch/stripe-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

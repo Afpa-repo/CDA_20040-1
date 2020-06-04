@@ -164,9 +164,12 @@ CARDS
 .scrollable-dropdown-menu .tt-dropdown-menu {
     max-height: 150px;
     overflow-y: auto;
+<<<<<<< HEAD
+=======
 }
 
 .mt-5
 {
     margin-top: 6rem !important;
+>>>>>>> 1bad3538f5a34d5a4a4ec114e9f56a0cf537e7b9
 }
