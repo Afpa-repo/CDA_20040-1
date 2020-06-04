@@ -39,9 +39,9 @@
                     Par gammes
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">DUPLO</a>
-                    <a class="dropdown-item" href="#">Architecture</a>
-                    <a class="dropdown-item" href="#">Technique</a>
+                    <a class="dropdown-item" href="{{ path('gamme',{'gamme' : 'DUPLO'}) }}">DUPLO</a>
+                    <a class="dropdown-item" href="{{ path('gamme',{'gamme' : 'Classique'}) }}">Classique</a>
+                    <a class="dropdown-item" href="{{ path('gamme',{'gamme' : 'Technic'}) }}">Technic</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -49,9 +49,9 @@
                     Par thèmes
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Star Wars™</a>
-                    <a class="dropdown-item" href="#">Harry Potter™</a>
-                    <a class="dropdown-item" href="#">Marvel™</a>
+                    <a class="dropdown-item" href="{{ path('theme',{'theme' : 'Star Wars™'}) }}">Star Wars™</a>
+                    <a class="dropdown-item" href="{{ path('theme',{'theme' : 'Harry Potter™'}) }}">Harry Potter™</a>
+                    <a class="dropdown-item" href="{{ path('theme',{'theme' : 'Marvel™'}) }}">Marvel™</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -69,9 +69,9 @@
                     Par prix
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">De 1 à 50 euros</a>
-                    <a class="dropdown-item" href="#">De 50 à 100 euros</a>
-                    <a class="dropdown-item" href="#">100 euros et plus </a>
+                    <a class="dropdown-item" href="{{ path('price',{'price' : 1}) }}">De 1 à 50 euros</a>
+                    <a class="dropdown-item" href="{{ path('price',{'price' : 51}) }}">De 50 à 100 euros</a>
+                    <a class="dropdown-item" href="{{ path('price',{'price' : 101}) }}">100 euros et plus </a>
                 </div>
             </li>
         </ul>
@@ -83,7 +83,7 @@
 
 
             {% for product in product %}
-                <div class="col-lg-3 col-md-3 mb-5">
+                <div class="col-lg-2 col-md-3 mb-5">
                     <div class="card h-100 bg-dark text-white">
                         <img class="card-img-top" src="{{ product.image }}" alt="">
                         <div class="card-body">
