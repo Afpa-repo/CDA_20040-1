@@ -43,6 +43,26 @@ class User implements UserInterface
      */
     private $orderDetails;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Name;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $First_Name;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Delivry_Adress;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $City;
+
     public function __construct()
     {
         $this->orderDetails = new ArrayCollection();
@@ -143,6 +163,54 @@ class User implements UserInterface
                 $orderDetail->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->Name;
+    }
+
+    public function setName(string $Name): self
+    {
+        $this->Name = $Name;
+
+        return $this;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->First_Name;
+    }
+
+    public function setFirstName(string $First_Name): self
+    {
+        $this->First_Name = $First_Name;
+
+        return $this;
+    }
+
+    public function getDelivryAdress(): ?string
+    {
+        return $this->Delivry_Adress;
+    }
+
+    public function setDelivryAdress(string $Delivry_Adress): self
+    {
+        $this->Delivry_Adress = $Delivry_Adress;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->City;
+    }
+
+    public function setCity(string $City): self
+    {
+        $this->City = $City;
 
         return $this;
     }

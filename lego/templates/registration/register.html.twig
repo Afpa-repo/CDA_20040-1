@@ -5,14 +5,37 @@
 {% block body %}
 
     <div class="container-fluid mt-5">
-    <h1>Register</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+    <h1 class="text-center">Inscription</h1>
+        {{ form_start(registrationForm) }}
+        <section class="row justify-content-md-center">
+            <div class="col-12 mt-4 ">
+                <div class="form-group offset-3 col-6">
+                    {{ form_row(registrationForm.name) }}
+                </div>
+                <div class="form-group offset-3 col-6">
+                    {{ form_row(registrationForm.firstName) }}
+                </div>
+                <div class="form-group offset-3 col-6">
+                    {{ form_row(registrationForm.delivryAdress) }}
+                </div>
+                <div class="form-group offset-3 col-6">
+                    {{ form_row(registrationForm.city) }}
+                </div>
+                <div class="form-group offset-3 col-6">
+                    {{ form_row(registrationForm.email) }}
+                </div>
+                <div class="form-group offset-3 col-6">
+                    {{ form_row(registrationForm.plainPassword) }}
+                </div>
+                <div class="form-group offset-3 col-6">
+                    {{ form_row(registrationForm.agreeTerms) }}
+                </div>
+                <div class="form-row">
+                    <button type="submit" class="btn btn-primary offset-5 col-1 mr-2">S'inscrire</button>
+                    <button type="reset" class="btn btn-danger ml-2">Annuler</button>
+                </div>
+            </div>
+        </section>
+        {{ form_end(registrationForm) }}
     </div>
 {% endblock %}

@@ -26,11 +26,6 @@ class Products
     private $Wording;
 
     /**
-     * @ORM\Column(type="string", length=25)
-     */
-    private $Ref;
-
-    /**
      * @ORM\Column(type="float")
      */
     private $Price;
@@ -43,7 +38,7 @@ class Products
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
      */
-    private $Rng;
+    private $Gamme;
 
     /**
      * @ORM\Column(type="string", length=10)
@@ -74,6 +69,7 @@ class Products
 
     public function __construct()
     {
+        $this->OrderDetails = new ArrayCollection();
         $this->orderDetails = new ArrayCollection();
     }
 
@@ -90,18 +86,6 @@ class Products
     public function setWording(string $Wording): self
     {
         $this->Wording = $Wording;
-
-        return $this;
-    }
-
-    public function getRef(): ?string
-    {
-        return $this->Ref;
-    }
-
-    public function setRef(string $Ref): self
-    {
-        $this->Ref = $Ref;
 
         return $this;
     }
@@ -130,14 +114,14 @@ class Products
         return $this;
     }
 
-    public function getRng(): ?string
+    public function getGamme(): ?string
     {
-        return $this->Rng;
+        return $this->Gamme;
     }
 
-    public function setRng(?string $Rng): self
+    public function setGamme(?string $Gamme): self
     {
-        $this->Rng = $Rng;
+        $this->Gamme = $Gamme;
 
         return $this;
     }
