@@ -67,11 +67,7 @@ class RegistrationFormType extends AbstractType
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),
-                    new Regex([
-                        'pattern' => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#$^+=!*()@%&.])$/',
-                        'match' => true,
-                        'message' => 'Votre mot de passe n\'est pas assez complexe',
-                    ]),
+
                 ]
             ])
             ->add('name', TextType::class, [

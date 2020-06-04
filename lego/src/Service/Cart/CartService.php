@@ -180,7 +180,7 @@ class CartService extends AbstractController
         $dompdf->loadHtml($html);
 
         // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
-        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->setPaper('A4', 'landscape');
 
         // Render the HTML as PDF
         $dompdf->render();
@@ -192,7 +192,7 @@ class CartService extends AbstractController
         $projectDir = $this->getParameter('kernel.project_dir');
 
         // e.g /var/www/project/public/mypdf.pdf
-        $finalPath = $projectDir . join(DIRECTORY_SEPARATOR, ['', 'public', 'PDF', '']) . 'com'.$order->getId().'.pdf';
+        $finalPath = $projectDir.join(DIRECTORY_SEPARATOR,['','public','PDF','']).'com'.$order->getId().'.pdf';
 
         // Write file to the desired path
         file_put_contents($finalPath, $output);
