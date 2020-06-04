@@ -33,7 +33,7 @@
         <h1>Votre Panier </h1>
     </div>
 
-    <table class="table text-center">
+    <table class="table ">
         <thead>
         <tr>
             <th>REF</th>
@@ -56,6 +56,8 @@
                 <td>{{ item.quantity }}</td>
 
                 <td>{{ item.product.price * item.quantity }} €</td>
+                <td>19.5%</td>
+                <td>{{ ((item.product.price * item.quantity)*1.195)|round(2,'floor') }} €</td>
             </tr>
 
         {% endfor %}
@@ -63,6 +65,8 @@
         <tfoot>
         <td colspan="4" class="text-right "><strong>Total </strong></td>
         <td><strong>{{ total }} € </strong></td>
+        <td></td>
+        <td><strong>{{ (total*1.195)|round(2,'floor') }} € </strong></td>
 
         </tfoot>
 

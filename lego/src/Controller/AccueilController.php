@@ -68,4 +68,13 @@ class AccueilController extends AbstractController
         return new JsonResponse($data, 200 ,[], true);
     }
 
+    /**
+     * @Route("add/{id}",name="acc_add")
+     */
+    public function addhome($id, CartService $service)
+    {
+        $service->add($id);
+        return $this->redirectToroute('accueil');
+    }
+
 }
