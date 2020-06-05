@@ -111,7 +111,7 @@ class AccueilController extends AbstractController
     }
 
  /**
-     * @Route("/{id}", name="detail")
+     * @Route("/detail/{id}", name="detail")
      */
     public function detail(Products $detail)
     {

@@ -26,16 +26,14 @@
     <hr>
 
 </div>
-
-
-<div class="container-fluid ">
-    <div class="mt-5">
+    <div class="mt-1">
         <h1>Votre Panier </h1>
     </div>
 
     <table class="table ">
         <thead>
         <tr>
+            <th>IMAGE</th>
             <th>REF</th>
             <th>DESIGNATION</th>
             <th>PU HT</th>
@@ -49,6 +47,7 @@
         {% for item in items %}
 
             <tr>
+                <td><img src="{{ item.product.image }}" class="img-fluid img-thumbnail " alt=""></td>
                 <td>{{ item.product.id }}</td>
                 <td>{{ item.product.wording }}</td>
                 <td>{{ item.product.price }} €</td>
@@ -63,7 +62,7 @@
         {% endfor %}
         </tbody>
         <tfoot>
-        <td colspan="4" class="text-right "><strong>Total </strong></td>
+        <td colspan="5" class="text-right "><strong>Total </strong></td>
         <td><strong>{{ total }} € </strong></td>
         <td></td>
         <td><strong>{{ (total*1.195)|round(2,'floor') }} € </strong></td>
@@ -71,7 +70,5 @@
         </tfoot>
 
     </table>
-</div>
-<div>
 </div>
 </body>
