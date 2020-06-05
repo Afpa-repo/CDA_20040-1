@@ -26,10 +26,7 @@
     <hr>
 
 </div>
-
-
-<div class="container-fluid ">
-    <div class="mt-5">
+    <div class="mt-1">
         <h1>Votre Panier </h1>
     </div>
 
@@ -50,7 +47,7 @@
         {% for item in items %}
 
             <tr>
-                <td><img src="{{ item.product.image }}" class="img-thumbnail" alt=""></td>
+                <td><img src="{{ item.product.image }}" class="img-fluid img-thumbnail " alt=""></td>
                 <td>{{ item.product.id }}</td>
                 <td>{{ item.product.wording }}</td>
                 <td>{{ item.product.price }} €</td>
@@ -73,7 +70,5 @@
         </tfoot>
 
     </table>
-</div>
-<div>
 </div>
 </body>
