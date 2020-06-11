@@ -20,11 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c55f8eca-345a-42fc-ba7c-ccc52ae46878" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lego/public/js/formu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CDA_20040-1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CDA_20040-1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/lego/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego/src/Migrations/Version20200603102811.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/lego/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lego/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/lego/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/lego/src/Form/RegistrationFormType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lego/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/lego/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/lego/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/lego/templates/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/lego/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/lego/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +88,6 @@
       <path value="$PROJECT_DIR$/lego/vendor/psr/cache" />
       <path value="$PROJECT_DIR$/lego/vendor/psr/container" />
       <path value="$PROJECT_DIR$/lego/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/lego/vendor/jdorn/sql-formatter" />
       <path value="$PROJECT_DIR$/lego/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/lego/vendor/laminas/laminas-code" />
       <path value="$PROJECT_DIR$/lego/vendor/laminas/laminas-eventmanager" />
@@ -154,6 +162,9 @@
       <path value="$PROJECT_DIR$/lego/vendor/phenx/php-svg-lib" />
       <path value="$PROJECT_DIR$/lego/vendor/phenx/php-font-lib" />
       <path value="$PROJECT_DIR$/lego/vendor/flosch/stripe-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/sql-formatter" />
     </include_path>
   </component>
   <component name="ProjectId" id="1cUJvIFsvVYfJ0IafDSCtazFSNl" />
@@ -203,6 +214,9 @@
       <workItem from="1591180399422" duration="245000" />
       <workItem from="1591180748123" duration="1645000" />
       <workItem from="1591184019923" duration="1145000" />
+      <workItem from="1591289599838" duration="2215000" />
+      <workItem from="1591364919494" duration="11785000" />
+      <workItem from="1591708075924" duration="12521000" />
     </task>
     <servers />
   </component>
@@ -222,14 +236,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591184145718">
+    <state x="275" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591289911432">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1591184145718" />
+    <state x="275" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1591289911432" />
     <state x="328" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590692353562">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="328" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.768@0.0.1366.768" timestamp="1590692353562" />
+    <state x="413" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591370723192">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="413" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1591370723192" />
     <state x="430" y="228" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1590691606333">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

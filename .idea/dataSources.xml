@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="lego@localhost [2]" uuid="cfc9dd1d-4be7-4e34-a48a-3e092ec79704">
+    <data-source source="LOCAL" name="lego@localhost" uuid="f4323de4-16e7-4e2b-8df3-38fae94f967b">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
