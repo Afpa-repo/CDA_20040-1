@@ -4,25 +4,39 @@
 
 {% block body %}
     <div class="container-fluid mt-5">
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-
-
-    <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" required>
-
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-
-    <p>Pas encore de compte ? <a href="{{ path('app_register') }}">Inscrivez-vous</a></p>
-
-    {#
+        <h1 class="text-center">Connexion</h1>
+        <form method="post">
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+            <div class="form-group offset-3 col-6">
+                <label for="inputEmail">Email</label>
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control"
+                       required autofocus>
+            </div>
+            <div class="form-group offset-3 col-6">
+                <label for="inputPassword">Mot de passe</label>
+                <input type="password" name="password" id="inputPassword" class="form-control" required>
+            </div>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+            <div class="row form-group">
+                    <a class=" offset-3" href="{{ path('app_register') }}">Mot de passe oublié ?</a>
+                    <p class=" offset-1" >Pas encore de compte ? <a href="{{ path('app_register') }}">Inscrivez-vous</a></p>
+            </div>
+            <div class="row">
+                <div class="offset-7">
+                    <button class="btn btn-lg btn-primary" type="submit">Connexion</button>
+                </div>
+            </div>
+        </form>
+        {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+ {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
         See https://symfony.com/doc/current/security/remember_me.html
 
@@ -32,18 +46,3 @@
             </label>
         </div>
     #}
-
-    <button class="btn btn-lg btn-success mt-3" type="submit">
-        Connexion
-    </button>
-</form>
-<<<<<<< HEAD
-    {% if app.user %}
-        <div class="mb-3" >
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
-=======
-    </div>
->>>>>>> 1bad3538f5a34d5a4a4ec114e9f56a0cf537e7b9
-{% endblock %}

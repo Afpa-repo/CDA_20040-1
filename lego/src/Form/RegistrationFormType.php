@@ -68,7 +68,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                     new Regex([
-                        'pattern' => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#$^+=!*()@%&.])$/',
+                        'pattern' => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$/',
                         'match' => true,
                         'message' => 'Votre mot de passe n\'est pas assez complexe',
                     ]),
@@ -85,7 +85,7 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Veuillez renseigner votre nom',
                     ]),
                     new Regex([
-                        'pattern' => '/^[A-Z][A-Za-z\é\è\ê\ç\æ\œ\-]+$/',
+                        'pattern' => '/^[A-Za-z\é\è\ê\ç\æ\œ\-]+$/',
                         'match' => true,
                         'message' => 'Votre nom ne doit contenir que des lettres',
                     ]),
@@ -102,7 +102,7 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Veuillez renseigner votre prénom',
                     ]),
                     new Regex([
-                        'pattern' => '/^[A-Z][A-Za-z\é\è\ê\ç\æ\œ\-]+$/',
+                        'pattern' => '/^[A-Za-z\é\è\ê\ç\æ\œ\-]+$/',
                         'match' => true,
                         'message' => 'Votre nom ne doit contenir que des lettres',
                     ]),
@@ -119,9 +119,9 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Veuillez renseigner votre adresse',
                     ]),
                     new Regex([
-                        'pattern' => '/(^[0-9]{1,4}+$)/',
+                        'pattern' => '/^[0-9]([a-zA-Z\'àâéèêôùûçÀÂÉÈÔÙÛÇ\s-]){1,500}$/',
                         'match' => true,
-                        'message' => 'Votre adresse n\'est pas valide',
+                        'message' => 'Votre nom ne doit contenir que des lettres',
                     ]),
                 ]
             ])
@@ -136,7 +136,7 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Veuillez renseigner votre ville',
                     ]),
                     new Regex([
-                        'pattern' => '/^[A-Z][A-Za-z\é\è\ê\ç\æ\œ\  \-]+$/',
+                        'pattern' => '/^[A-Za-z\é\è\ê\ç\æ\œ\  \-]+$/',
                         'match' => true,
                         'message' => 'Votre ville ne doit contenir que des lettres',
                     ]),
