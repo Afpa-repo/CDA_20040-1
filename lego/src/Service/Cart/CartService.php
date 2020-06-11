@@ -179,8 +179,8 @@ class CartService extends AbstractController
         // Load HTML to Dompdf
         $dompdf->loadHtml($html);
 
-        // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
-        $dompdf->setPaper('A4', 'portrait');
+        // (Optional) Setup the paper size and orientation 'portrait' or 'landscape'
+        $dompdf->setPaper('A3', 'landscape');
 
         // Render the HTML as PDF
         $dompdf->render();
@@ -192,7 +192,7 @@ class CartService extends AbstractController
         $projectDir = $this->getParameter('kernel.project_dir');
 
         // e.g /var/www/project/public/mypdf.pdf
-        $finalPath = $projectDir . join(DIRECTORY_SEPARATOR, ['', 'public', 'PDF', '']) . 'com'.$order->getId().'.pdf';
+        $finalPath = $projectDir.join(DIRECTORY_SEPARATOR,['','public','PDF','']).'com'.$order->getId().'.pdf';
 
         // Write file to the desired path
         file_put_contents($finalPath, $output);
@@ -214,10 +214,13 @@ class CartService extends AbstractController
 
         if (!empty($panier)) {
             $order = new Order();
-            $order->setDeliveryAdress('ex')
-                ->setDeliveryDate(new \DateTime)
-                ->setOrderDate(new \DateTime)
-                ->setShippingPrice(25)
+            $date = new \DateTime;
+            $date->format('d/m/Y');
+            $datlivr = $date->add(new \DateInterval('P10D'));
+            $order->setDeliveryAdress($user->getDelivryAdress())
+                ->setDeliveryDate($datlivr)
+                ->setOrderDate($date)
+                ->setShippingPrice(0)
                 ->setStatus("Valider");
             $this->manager->persist($order);
             $this->manager->flush();
@@ -244,8 +247,8 @@ class CartService extends AbstractController
                 ->from('hello@example.com')
                 ->to($mail)
                 ->attachFromPath($finalPath)
-                ->subject('Lego : Facture commande n°'.$order->getId())
-                ->text('Votre facture de la commande n°'.$order->getId());
+                ->subject('Lego : Merci pour votre commande ')
+                ->HTML('Bonjour '.$user->getName().','.$user->getFirstName().'<br> Veuillez trouver ci-joint un récapitulatif de votre  commande n°'.$order->getId().'<br> La livraison de votre commande est estimé le '.$order->getDeliveryDate()->format('d/m/y').' entre 8h et 14h. <br>N\'hésitez pas a nous contacter pour plus ample information ou directement sur le site : lego.fr');
 
             $this->mailer->send($email);
 

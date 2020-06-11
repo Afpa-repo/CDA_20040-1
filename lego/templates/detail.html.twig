@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="card-body mt-5">
+        <img src="{{ detail.image }}">
+        <div>{{ detail.Wording }}</div>
+        <div>{{ detail.Gamme }}</div>
+        <div>{{ detail.Price }}</div>
+        <div>{{ detail.Theme }}</div>
+        <div>{{ detail.Age }}</div>
+        <div>{{ detail.Description }}</div>
+    </div>
+{% endblock %}
