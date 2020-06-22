@@ -20,6 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c55f8eca-345a-42fc-ba7c-ccc52ae46878" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/CDA_20040-1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CDA_20040-1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/README" beforeDir="false" afterPath="$PROJECT_DIR$/lego/README.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lego/public/js/formu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/CDA_20040-1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CDA_20040-1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
@@ -179,6 +183,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -214,6 +219,8 @@
       <workItem from="1591180399422" duration="245000" />
       <workItem from="1591180748123" duration="1645000" />
       <workItem from="1591184019923" duration="1145000" />
+      <workItem from="1592836701437" duration="1064000" />
+      <workItem from="1592837782913" duration="14000" />
       <workItem from="1591289599838" duration="2215000" />
       <workItem from="1591364919494" duration="11785000" />
       <workItem from="1591708075924" duration="12521000" />
