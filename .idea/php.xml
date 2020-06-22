@@ -116,6 +116,8 @@
       <path value="$PROJECT_DIR$/lego/vendor/phenx/php-svg-lib" />
       <path value="$PROJECT_DIR$/lego/vendor/phenx/php-font-lib" />
       <path value="$PROJECT_DIR$/lego/vendor/flosch/stripe-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/sql-formatter" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

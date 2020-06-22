@@ -20,11 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c55f8eca-345a-42fc-ba7c-ccc52ae46878" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CDA_20040-1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CDA_20040-1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/lego/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego/src/Migrations/Version20200603102811.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/lego/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego/README" beforeDir="false" afterPath="$PROJECT_DIR$/lego/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +153,8 @@
       <path value="$PROJECT_DIR$/lego/vendor/phenx/php-svg-lib" />
       <path value="$PROJECT_DIR$/lego/vendor/phenx/php-font-lib" />
       <path value="$PROJECT_DIR$/lego/vendor/flosch/stripe-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/lego/vendor/doctrine/sql-formatter" />
     </include_path>
   </component>
   <component name="ProjectId" id="1cUJvIFsvVYfJ0IafDSCtazFSNl" />
@@ -168,6 +169,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -203,6 +205,8 @@
       <workItem from="1591180399422" duration="245000" />
       <workItem from="1591180748123" duration="1645000" />
       <workItem from="1591184019923" duration="1145000" />
+      <workItem from="1592836701437" duration="1064000" />
+      <workItem from="1592837782913" duration="14000" />
     </task>
     <servers />
   </component>
