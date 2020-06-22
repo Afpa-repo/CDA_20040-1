@@ -11,27 +11,34 @@
             <div class="col-12 mt-4 ">
                 <div class="form-group offset-3 col-6">
                     {{ form_row(registrationForm.name) }}
+                    <span id="errName"></span>
                 </div>
                 <div class="form-group offset-3 col-6">
                     {{ form_row(registrationForm.firstName) }}
+                    <span id="errFirstName"></span>
                 </div>
                 <div class="form-group offset-3 col-6">
                     {{ form_row(registrationForm.delivryAdress) }}
+                    <span id="errAddress"></span>
                 </div>
                 <div class="form-group offset-3 col-6">
                     {{ form_row(registrationForm.city) }}
+                    <span id="errCity"></span>
                 </div>
                 <div class="form-group offset-3 col-6">
                     {{ form_row(registrationForm.email) }}
+                    <span id="errMail"></span>
                 </div>
                 <div class="form-group offset-3 col-6">
+                    <span id="errPassword"></span>
                     {{ form_row(registrationForm.plainPassword) }}
+                    <span id="errPassword2"></span>
                 </div>
                 <div class="form-group offset-3 col-6">
                     {{ form_row(registrationForm.agreeTerms) }}
                 </div>
                 <div class="form-row">
-                    <button type="submit" class="btn btn-primary offset-5 col-1 mr-2">S'inscrire</button>
+                    <button id="envoie" type="submit" class="btn btn-primary offset-5 col-1 mr-2">S'inscrire</button>
                     <button type="reset" class="btn btn-danger ml-2">Annuler</button>
                 </div>
             </div>

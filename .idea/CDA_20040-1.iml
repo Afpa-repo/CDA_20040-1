@@ -27,7 +27,6 @@
       <excludeFolder url="file://$MODULE_DIR$/lego/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/lego/vendor/flosch/stripe-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/lego/vendor/fzaninotto/faker" />
-      <excludeFolder url="file://$MODULE_DIR$/lego/vendor/jdorn/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/lego/vendor/laminas/laminas-code" />
       <excludeFolder url="file://$MODULE_DIR$/lego/vendor/laminas/laminas-eventmanager" />
       <excludeFolder url="file://$MODULE_DIR$/lego/vendor/laminas/laminas-zendframework-bridge" />

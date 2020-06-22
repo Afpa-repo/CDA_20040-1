@@ -41,7 +41,6 @@
       <path value="$PROJECT_DIR$/lego/vendor/psr/cache" />
       <path value="$PROJECT_DIR$/lego/vendor/psr/container" />
       <path value="$PROJECT_DIR$/lego/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/lego/vendor/jdorn/sql-formatter" />
       <path value="$PROJECT_DIR$/lego/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/lego/vendor/laminas/laminas-code" />
       <path value="$PROJECT_DIR$/lego/vendor/laminas/laminas-eventmanager" />
@@ -116,6 +115,7 @@
       <path value="$PROJECT_DIR$/lego/vendor/phenx/php-svg-lib" />
       <path value="$PROJECT_DIR$/lego/vendor/phenx/php-font-lib" />
       <path value="$PROJECT_DIR$/lego/vendor/flosch/stripe-bundle" />
+      <path value="$PROJECT_DIR$/lego/vendor/jdorn/sql-formatter" />
       <path value="$PROJECT_DIR$/lego/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/lego/vendor/doctrine/sql-formatter" />
     </include_path>

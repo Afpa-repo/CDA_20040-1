@@ -252,6 +252,7 @@
         },
         {
             "name": "doctrine/common",
+
             "version": "2.13.3",
             "source": {
                 "type": "git",
@@ -345,6 +346,7 @@
                     "type": "tidelift"
                 }
             ],
+
             "time": "2020-06-05T16:46:05+00:00"
         },
         {
