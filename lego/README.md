@@ -17,14 +17,14 @@ Création d'un site e-commerce en local en utilisant le framework Symfony 4.4.8.
 - Envois mail 'mot de passe oublié'
 
 
-#Pré-requis
+# Pré-requis
 
 - Composer
 - Maildev
 - Serveur local
 - PHP (toutes les versions exceptés v 4.4.0, pour savoir votre version exécuter la commande ```PHP -v ``` dans votre terminal" )
 
-#Installation
+# Installation
 
 Après avoir installer composer et cloner le projet :
 
@@ -35,7 +35,7 @@ Si votre serveur local est bien configuré, vous devriez voir un template du pro
 (Ne pas oublier le chemin complet pour la page d'accueil : /Public/index.php)
 
 
-#Démarrage
+# Démarrage
 
 Pour démarrer le projet final (comprenant la création de la base de données ainsi que les produits) voici les différentes étapes :
 
@@ -49,18 +49,18 @@ Pour démarrer le projet final (comprenant la création de la base de données a
 - Vérifier que votre base de donnée comporte la table 'lego' et importer le fichier 'public/SQL/products.sql'
 
 
-#Fabriqué avec
+# Crée avec
 
 - Bootstrap - Framework CSS (front-end)
 - Dompdf - Bundle Symfony (PDF generator)
 - Maildev - Serveur STMP local (envoi mail)
 - Bloodhound & Typeahead (Autocompletion)
 
-#Présentation rapide
+# Présentation rapide
 
 ![](public/img/presentation.gif)
 
-#Auteurs
+# Auteurs
 
 - Valentin : https://github.com/ValEttori
 - Logan : https://github.com/Logan-55
